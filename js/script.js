@@ -37,38 +37,40 @@ if (!prefersReducedMotion && "IntersectionObserver" in window) {
 }
 
 
-const chatbotBtn = document.getElementById("chatbot-button");
-const chatbotWindow = document.getElementById("chatbot-window");
-const chatbotInput = document.getElementById("chatbot-input");
-const chatbotMessages = document.getElementById("chatbot-messages");
+// === CHATBOT LOGIC ===
 
-chatbotBtn.onclick = () => {
-  chatbotWindow.style.display =
-    chatbotWindow.style.display === "flex" ? "none" : "flex";
+const chatBtn = document.getElementById("chat-button");
+const chatBox = document.getElementById("chat-box");
+const chatInput = document.getElementById("chat-input");
+const chatMessages = document.getElementById("chat-messages");
+
+
+chatBtn.onclick = () => {
+  chatBox.style.display = (chatBox.style.display === "flex") ? "none" : "flex";
 };
 
 
-chatbotInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter" && chatbotInput.value.trim() !== "") {
-    const msg = chatbotInput.value;
-    chatbotMessages.innerHTML += `<div class="user-msg">${msg}</div>`;
-    chatbotInput.value = "";
+chatInput.addEventListener("keypress", function(e) {
+  if (e.key === "Enter" && chatInput.value.trim() !== "") {
 
-    
+    const msg = chatInput.value;
+    chatMessages.innerHTML += `<div class="user-msg">${msg}</div>`;
+    chatInput.value = "";
+
     let reply = "Merci pour ton message 😊";
 
-    const lower = msg.toLowerCase();
-    if (lower.includes("projet")) reply = "Tu peux voir mes projets ici 👉 #projets";
-    if (lower.includes("experience")) reply = "Voici mes expériences 👉 #experience";
-    if (lower.includes("cv")) reply = "Télécharge mon CV ici 👉 #cv";
-    if (lower.includes("bonjour") || lower.includes("salut"))
-      reply = "Coucou 👋 ! Comment puis‑je t’aider ?";
-    if (lower.includes("contact"))
-      reply = "Tu peux me contacter : leonie.schmit@esme.fr 📧";
+    const text = msg.toLowerCase();
+
+    if (text.includes("projet")) reply = "Tu peux voir mes projets dans la section Projets 👉 #projets";
+    if (text.includes("experience")) reply = "Mes expériences sont ici 👉 #experience";
+    if (text.includes("cv")) reply = "Tu peux télécharger mon CV dans la section CV 👉 #cv";
+    if (text.includes("bonjour") || text.includes("salut")) reply = "Hey 👋 ! Comment puis‑je t’aider ?";
+    if (text.includes("contact")) reply = "Tu peux m'écrire ici : leonie.schmit@esme.fr 💌";
+
 
     setTimeout(() => {
-      chatbotMessages.innerHTML += `<div class="bot-msg">${reply}</div>`;
-      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      chatMessages.innerHTML += `<div class="bot-msg">${reply}</div>`;
+      chatMessages.scrollTop = chatMessages.scrollHeight;
     }, 300);
   }
 });
