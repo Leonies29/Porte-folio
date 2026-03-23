@@ -255,6 +255,17 @@ h1{
 .photo-placeholder span{ display: block; max-width: 38ch; }
 
 
+.banner {
+  position: relative;
+}
+
+.banner-logo {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 60px;
+}
+
 .exp-logo {
   width: 45px;
   height: auto;
