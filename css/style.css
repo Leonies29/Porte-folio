@@ -1,5 +1,5 @@
 :root{
-  /* Light theme (clair & lumineux) */
+  
   --bg: #F7F8FA;
   --text: rgba(17, 18, 20, .92);
   --muted: rgba(17, 18, 20, .66);
@@ -7,11 +7,11 @@
   --surface: rgba(255,255,255,.72);
   --surface2: rgba(255,255,255,.88);
   --shadow: 0 18px 55px rgba(16, 24, 40, .12);
-  /* Accents doux (faciles à ajuster pour matcher ta photo) */
-  /* Palette photo: teal (haut), bois chaud (plafond), sage (plantes) */
-  --accent1: rgba(0, 128, 111, .16);   /* teal chemise */
-  --accent2: rgba(171, 125, 79, .18);  /* bois chaud */
-  --accent3: rgba(93, 121, 94, .14);   /* vert sauge */
+  
+  
+  --accent1: rgba(0, 128, 111, .16);   
+  --accent2: rgba(171, 125, 79, .18);  
+  --accent3: rgba(93, 121, 94, .14);   
   --radius: 18px;
   --max: 1120px;
   --gap: clamp(18px, 2.2vw, 28px);
@@ -43,7 +43,7 @@ code{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liber
   margin: 0 auto;
 }
 
-/* Header sticky */
+
 .header{
   position: sticky;
   top: 0;
@@ -129,7 +129,7 @@ code{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liber
   cursor: pointer;
 }
 
-/* Hero */
+
 .hero{
   padding: clamp(34px, 6vw, 74px) 0 28px;
 }
@@ -254,7 +254,23 @@ h1{
 }
 .photo-placeholder span{ display: block; max-width: 38ch; }
 
-/* Sections */
+
+.exp-logo {
+  width: 45px;
+  height: auto;
+  margin-top: 8px;
+  transition: transform 0.2s ease;
+}
+
+.exp-logo:hover {
+  transform: scale(1.1);
+}
+
+.logo-link {
+  display: inline-block;
+}
+
+
 .section{
   padding: 44px 0;
   scroll-margin-top: 84px;
@@ -362,7 +378,7 @@ h2{
   margin-top: 18px;
 }
 
-/* Reveal animation (IntersectionObserver in JS) */
+
 .reveal{
   opacity: 0;
   transform: translateY(14px);
