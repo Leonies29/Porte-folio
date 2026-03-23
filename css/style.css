@@ -277,6 +277,14 @@ h1{
   transform: scale(1.1);
 }
 
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
 .logo-link {
   display: inline-block;
 }
