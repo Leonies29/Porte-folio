@@ -37,7 +37,7 @@ if (!prefersReducedMotion && "IntersectionObserver" in window) {
 }
 
 
-// === CHATBOT LOGIC ===
+// Chatbott
 
 const chatBtn = document.getElementById("chat-button");
 const chatBox = document.getElementById("chat-box");
