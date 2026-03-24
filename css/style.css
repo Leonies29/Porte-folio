@@ -316,19 +316,26 @@ h1{
 }
 
 .bot-msg {
-  background: rgba(0, 128, 111, 0.18);
-  padding: 8px 10px;
-  border-radius: 8px;
-  margin-bottom: 8px;
+  background: #1b8f65; 
+  color: white;
+  padding: 12px 16px;
+  border-radius: 15px;
+  max-width: 70%;
+  margin: 8px 0;
+  align-self: flex-start;
 }
 
+
 .user-msg {
-  background: rgba(0,0,0,0.08);
-  padding: 8px 10px;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  text-align: right;
+  background: #b08f74; 
+  color: white;
+  padding: 12px 16px;
+  border-radius: 15px;
+  max-width: 70%;
+  margin: 8px 0;
+  align-self: flex-end;
 }
+
 
 #chat-input {
   border: none;
@@ -336,6 +343,22 @@ h1{
   border-top: 1px solid #ddd;
   font-size: 0.9rem;
   outline: none;
+}
+
+.question-bubble {
+  background: transparent;
+  border: 2px solid #1b8f65;
+  color: #1b8f65;
+  padding: 8px 14px;
+  border-radius: 20px;
+  margin: 6px 0;
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+}
+
+.question-bubble:hover {
+  background: #1b8f6515;
 }
 
 
