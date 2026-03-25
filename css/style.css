@@ -293,7 +293,23 @@ aside.photo img {
   font-size: 30px;
   cursor: pointer;
   box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+  transition: transform .2s ease;
 }
+
+
+#chat-box {
+  display: none;
+  flex-direction: column;
+  width: 320px;
+  max-height: 450px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+  overflow-y: auto;
+  margin-bottom: 12px;
+  animation: fadeIn .3s ease;
+}
+
 
 #chat-box {
   display: none;
@@ -313,7 +329,9 @@ aside.photo img {
   padding: 14px;
   font-weight: 600;
   text-align: center;
+  border-radius: 16px 16px 0 0;
 }
+
 
 #chat-messages {
   flex: 1;
@@ -345,6 +363,34 @@ aside.photo img {
   outline: none;
 }
 
+/* FAQ */
+
+.faq-item {
+  border-bottom: 1px solid #eee;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 14px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #222;
+  font-weight: 600;
+}
+
+.faq-question:hover {
+  background: #f3f3f3;
+}
+
+.faq-answer {
+  display: none;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  color: #444;
+}
 
 
 /*Logo*/
@@ -559,4 +605,9 @@ h2{
   html{ scroll-behavior: auto; }
   .btn, .links a, .reveal{ transition: none !important; }
   .reveal{ opacity: 1; transform: none; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
