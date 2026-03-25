@@ -419,6 +419,19 @@ h2{
   padding: 18px;
   box-shadow: 0 10px 30px rgba(0,0,0,.22);
 }
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.card-head img.exp-logo {
+  width: 45px;
+  height: auto;
+  object-fit: contain;
+}
 
 .card h3{
   margin: 0 0 6px;
