@@ -43,9 +43,15 @@ const chatBox = document.getElementById("chat-box");
 const chatMessages = document.getElementById("chat-messages");
 const faqButtons = document.querySelectorAll(".faq-question");
 
+
 chatBtn.onclick = () => {
-  chatBox.style.display = (chatBox.style.display === "flex") ? "none" : "flex";
+  const isOpen = chatBox.style.display === "flex";
+
+  chatBox.style.display = isOpen ? "none" : "flex";
+
+  chatBtn.classList.toggle("open", !isOpen);
 };
+
 
 faqButtons.forEach(btn => {
   btn.addEventListener("click", () => {

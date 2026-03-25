@@ -286,6 +286,8 @@ aside.photo img {
   height: 60px;
   background: #00806f;
   color: white;
+  position: relative;
+  bottom: 0;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -293,7 +295,12 @@ aside.photo img {
   font-size: 30px;
   cursor: pointer;
   box-shadow: 0 6px 25px rgba(0,0,0,0.25);
-  transition: transform .2s ease;
+  transition: bottom .25s ease;
+}
+
+
+#chat-button.open {
+  bottom: 8px; 
 }
 
 
