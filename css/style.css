@@ -240,7 +240,6 @@ aside.photo img {
 
 .photo img{
   width: 100%;
-  height: auto;
   object-fit: cover;
   display: block;
 }
@@ -539,10 +538,21 @@ h2{
     justify-content: flex-start;
     padding: 8px 0 14px;
   }
+  .photo {
+    overflow: visible;      
+    min-height: auto;}
+  .photo img {
+      width: 100%;
+      height: auto;           
+      object-fit: contain;    
+      display: block;
+    }
   .links.open{ display: flex; }
   .brand{ min-width: unset; }
   .grid-2{ grid-template-columns: 1fr; }
-  .item{ grid-template-columns: 1fr; }
+  .item{ 
+    grid-template-columns: 1fr;
+   }
 }
 
 @media (prefers-reduced-motion: reduce){
