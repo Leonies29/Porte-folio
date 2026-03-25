@@ -544,12 +544,7 @@ h2{
   .grid-2{ grid-template-columns: 1fr; }
   .item{ grid-template-columns: 1fr; }
 }
-@media (max-width: 768px) {
-  aside.photo img {
-    max-height: 200px; 
-    object-fit: cover;
-  }
-}
+
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior: auto; }
   .btn, .links a, .reveal{ transition: none !important; }
