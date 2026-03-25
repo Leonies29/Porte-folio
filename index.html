@@ -17,28 +17,29 @@
 
 
 <div id="chat-container">
-  <div id="chat-button">❓</div>
+  <div id="chat-button">❔</div>
 
   <div id="chat-box">
     <div id="chat-header">FAQ – Chatbot</div>
-    <div id="chat-questions">
-      <div class="faq-item">
-        <button class="faq-question">Quels services proposes‑tu ?</button>
-        <div class="faq-answer">Je travaille sur le produit, l’innovation, la data et la mobilité internationale.</div>
-      </div>
 
-      <div class="faq-item">
-        <button class="faq-question">Comment te contacter ?</button>
-        <div class="faq-answer">Tu peux me joindre par email ou sur LinkedIn.</div>
-      </div>
+    <div id="faq-list">
+      <button class="faq-question" data-answer="Je travaille sur le produit, l’innovation, la data, et la mobilité internationale.">
+        Quels services proposes‑tu ?
+      </button>
 
-      <div class="faq-item">
-        <button class="faq-question">Quels projets as‑tu réalisés ?</button>
-        <div class="faq-answer">J’ai cofondé RISE, participé à Innovatech, remporté IONIS Innovation, etc.</div>
-      </div>
+      <button class="faq-question" data-answer="Tu peux me contacter par email ou via LinkedIn.">
+        Comment te contacter ?
+      </button>
+
+      <button class="faq-question" data-answer="J’ai cofondé RISE, participé à Innovatech, gagné IONIS Innovation...">
+        Quels projets as‑tu réalisés ?
+      </button>
     </div>
+
+    <div id="chat-messages"></div>
   </div>
 </div>
+``
 
 
 <body>
