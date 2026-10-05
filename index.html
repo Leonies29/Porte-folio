@@ -3,501 +3,880 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Léonie SCHMIT — Portfolio | Big Data & Marketing Digital</title>
-  <meta name="description" content="Portfolio de Léonie SCHMIT : expériences, projets, formation, compétences et contact." />
+  <title>Léonie Schmit · Data &amp; Strategy Analyst · Portfolio</title>
+  <meta name="description" content="Portfolio de Léonie Schmit, étudiante ingénieure en 5e année à l'ESME (Big Data & Marketing Digital) : expériences, projets data et marketing, RISE, compétences et contact." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+    :root {
+      --paper: #F8F4EF;
+      --lilac: #EDE4DB;
+      --lilac-soft: #F3ECE4;
+      --violet: #56688F;
+      --ink: #5A3F35;
+      --muted: #8A7366;
+      --pin: #9AA6C0;
+      --line: rgba(90, 63, 53, 0.18);
+      --display: "Nunito", "Varela Round", "Segoe UI", sans-serif;
+      --body: "Nunito", "Segoe UI", system-ui, sans-serif;
+      --wrap: 1120px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--violet); text-underline-offset: 3px; }
+    a:hover { color: var(--ink); }
+    :focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; border-radius: 4px; }
+
+    .wrap { width: min(var(--wrap), 100% - 2.5rem); margin-inline: auto; }
+
+    h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.1; margin: 0; }
+    h2 { font-size: clamp(2rem, 4.2vw, 3rem); letter-spacing: -0.01em; }
+    h3 { font-size: 1.3rem; font-weight: 700; }
+    p { margin: 0 0 1rem; }
+
+    /* Header */
+    .header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(248, 244, 239, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: var(--ink); }
+    .brand .mark {
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1.5px solid var(--ink);
+      display: grid; place-items: center;
+      font-family: var(--display); font-weight: 800; font-size: .9rem; letter-spacing: .05em;
+    }
+    .brand strong { font-family: var(--display); font-weight: 700; font-size: 1.1rem; }
+    .links { display: flex; align-items: center; gap: 1.6rem; }
+    .links a { color: var(--ink); text-decoration: none; font-size: .95rem; }
+    .links a:hover { color: var(--violet); }
+    .links .cta {
+      padding: .5rem 1rem; border-radius: 999px; background: var(--ink); color: var(--paper);
+    }
+    .links .cta:hover { background: var(--violet); color: #fff; }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .lang-btn {
+      font: inherit; font-weight: 700; font-size: .9rem; letter-spacing: .04em; cursor: pointer;
+      width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--ink);
+      background: transparent; color: var(--ink);
+    }
+    .lang-btn:hover { background: var(--ink); color: var(--paper); }
+    .menu-btn {
+      display: none; font: inherit; background: none; border: 1px solid var(--ink);
+      border-radius: 999px; padding: .35rem .9rem; color: var(--ink); cursor: pointer;
+    }
+
+    /* Hero */
+    .hero { background: var(--lilac); position: relative; overflow: hidden; }
+    .hero > .wrap { position: relative; z-index: 1; }
+    .contours { position: absolute; left: -30px; bottom: -10px; width: 300px; height: 420px; pointer-events: none; }
+    .contours path { fill: none; stroke: #fff; stroke-width: 1.6; }
+    .contours circle { fill: #fff; }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.35fr .9fr; gap: 3rem; align-items: center;
+      padding: 4.5rem 0 4rem;
+    }
+    .hero .intro .role { display: inline-block; font-size: 1.15rem; font-weight: 800; letter-spacing: .04em; margin-bottom: .3rem; }
+    .hero .intro { font-size: 1rem; color: var(--ink); margin-bottom: 1.4rem; max-width: 34ch; }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6.4vw, 4.8rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      line-height: 1.12;
+    }
+    .signature { width: min(520px, 100%); height: 60px; margin: 0 0 1.4rem; overflow: visible; }
+    .signature path {
+      fill: none; stroke: #fff; stroke-width: 7; stroke-linecap: round;
+      stroke-dasharray: 1400; stroke-dashoffset: 1400;
+      animation: draw 2.4s ease-out .3s forwards;
+    }
+    .signature circle { fill: var(--pin); opacity: 0; animation: pop .4s ease-out 2.5s forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes pop { to { opacity: 1; } }
+
+    .lede { font-size: 1.2rem; max-width: 46ch; margin-bottom: 1rem; }
+    .bio { color: var(--ink); max-width: 58ch; opacity: .85; }
+    .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.8rem; }
+    .btn {
+      display: inline-block; text-decoration: none; font-weight: 500; font-size: .98rem;
+      padding: .75rem 1.3rem; border-radius: 999px; border: 1.5px solid var(--ink); color: var(--ink);
+      background: transparent; cursor: pointer; font-family: var(--body);
+    }
+    .btn:hover { background: var(--ink); color: var(--paper); }
+    .btn.primary { background: var(--ink); color: var(--paper); }
+    .btn.primary:hover { background: var(--violet); border-color: var(--violet); color: #fff; }
+
+    .portrait { position: relative; justify-self: center; width: min(340px, 100%); }
+    .portrait .frame {
+      aspect-ratio: 4 / 5; border-radius: 999px 999px 24px 24px; overflow: hidden;
+      background: #fff; border: 1.5px solid var(--ink);
+      display: grid; place-items: center;
+    }
+    .portrait .frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .portrait .initials { font-family: var(--display); font-weight: 700; font-size: 5rem; color: var(--muted); }
+    .frame-wrap { position: relative; isolation: isolate; }
+    .frame-wrap::after {
+      content: ""; position: absolute; inset: 14px -14px -14px 14px;
+      border: 1.5px solid var(--pin); background: var(--pin); border-radius: 999px 999px 24px 24px; z-index: -1;
+    }
+    .facts { margin-top: 2.2rem; font-size: .95rem; color: var(--ink); text-align: center; }
+
+    /* Sections */
+    section.block { padding: 5.5rem 0; border-top: 1px solid var(--line); }
+    .head { display: grid; grid-template-columns: 1fr 1.4fr; gap: 2rem; align-items: end; margin-bottom: 3rem; }
+    .head p { color: var(--muted); margin: 0; max-width: 52ch; }
+
+    /* Experience */
+    .exp-group + .exp-group { margin-top: 3.5rem; }
+    .exp-group > h3 { font-size: 1.1rem; color: var(--muted); margin-bottom: 1rem; }
+    .timeline { list-style: none; margin: 0; padding: 0; }
+    .entry {
+      display: grid; grid-template-columns: 190px 1fr; gap: 2rem;
+      padding: 1.6rem 0; border-top: 1px solid var(--line);
+    }
+    .entry:last-child { border-bottom: 1px solid var(--line); }
+    .when { color: var(--muted); font-size: .95rem; padding-top: .2rem; }
+    .entry-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: .5rem; }
+    .entry-head h4 { font-family: var(--display); font-weight: 700; font-size: 1.3rem; margin: 0; line-height: 1.2; }
+    .entry-head .org { display: block; font-family: var(--body); font-size: .95rem; color: var(--muted); margin-top: .2rem; }
+    .logo { height: 36px; width: auto; max-width: 110px; object-fit: contain; flex-shrink: 0; }
+    .entry ul { margin: .4rem 0 0; padding-left: 1.1rem; }
+    .entry li { margin-bottom: .35rem; max-width: 70ch; }
+    .entry li::marker { color: var(--violet); }
+    .stack { margin-top: .8rem; font-size: .92rem; color: var(--muted); }
+
+    .compact { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 3rem; }
+    .compact .entry { grid-template-columns: 150px 1fr; padding: 1.1rem 0; gap: 1.2rem; }
+    .compact .entry:last-child { border-bottom: none; }
+    .compact .entry-head h4 { font-size: 1.1rem; }
+    .compact p { font-size: .97rem; color: var(--muted); margin: 0; }
+
+    /* Projects */
+    .filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+    .filters button {
+      font: inherit; font-size: .95rem; cursor: pointer;
+      padding: .45rem 1rem; border-radius: 999px; border: 1.5px solid var(--line);
+      background: transparent; color: var(--ink);
+    }
+    .filters button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+    .filters button:hover:not([aria-pressed="true"]) { border-color: var(--ink); }
+
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .project {
+      background: #fff; border: 1px solid var(--line); border-radius: 20px;
+      padding: 1.8rem; display: flex; flex-direction: column;
+    }
+    .project[hidden] { display: none !important; }
+    .project.feature {
+      grid-column: 1 / -1; background: var(--ink); color: var(--paper); border: none;
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.5rem; padding: 2.4rem;
+    }
+    .project .kind { font-size: .88rem; color: var(--muted); margin-bottom: .6rem; }
+    .project.feature .kind { color: #E3D3C5; }
+    .project h3 { font-size: 1.6rem; margin-bottom: .8rem; }
+    .project.feature h3 { font-size: clamp(2rem, 4vw, 2.8rem); }
+    .project p { max-width: 62ch; }
+    .project .tools { margin-top: auto; padding-top: 1rem; font-size: .9rem; color: var(--muted); }
+    .project.feature .tools { color: #E3D3C5; }
+    .project a.more { font-weight: 500; }
+    .project.feature a { color: #E3D3C5; }
+    .project.feature ul { margin: 0; padding-left: 1.1rem; }
+    .project.feature li { margin-bottom: .5rem; }
+    .project.feature li::marker { color: var(--pin); }
+    .metric { font-family: var(--display); font-size: 2.2rem; font-weight: 800; line-height: 1; color: var(--violet); }
+    .metric-row { display: flex; gap: 2rem; margin: .4rem 0 1rem; }
+    .metric-row span { display: block; font-size: .85rem; color: var(--muted); margin-top: .3rem; }
+
+    /* Awards */
+    .awards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; }
+    .awards li { border-top: 1.5px solid var(--ink); padding-top: 1rem; }
+    .awards .rank { font-family: var(--display); font-size: 1.5rem; font-weight: 800; color: var(--ink); line-height: 1.15; display: block; margin-bottom: .4rem; }
+    .awards p { font-size: .95rem; color: var(--muted); margin: 0; }
+
+    /* Education */
+    .edu .entry-head h4 { font-size: 1.25rem; }
+    .edu p { color: var(--muted); margin: 0; }
+
+    /* Skills */
+    .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem 3rem; }
+    .skills h3 { font-size: 1.25rem; margin-bottom: .7rem; }
+    .skills ul { list-style: none; margin: 0; padding: 0; }
+    .skills li { padding: .35rem 0; border-bottom: 1px solid var(--line); font-size: .98rem; }
+
+    /* CV + contact */
+    .closing { background: var(--lilac); }
+    .closing-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
+    .closing h2 { margin-bottom: 1rem; }
+    .contact-list { list-style: none; margin: 0; padding: 0; }
+    .contact-list li { display: grid; grid-template-columns: 120px 1fr; gap: 1rem; padding: .8rem 0; border-bottom: 1px solid rgba(90, 63, 53, .25); }
+    .contact-list span { color: var(--muted); }
+    .contact-list a { color: var(--ink); }
+    .footer { padding: 2rem 0; font-size: .9rem; color: var(--muted); }
+
+    /* FAQ bubble */
+    #faq { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 30; }
+    #faq-toggle {
+      width: 56px; height: 56px; border-radius: 50%; border: none; cursor: pointer;
+      background: var(--ink); color: var(--paper); font-family: var(--display); font-size: 1.5rem;
+      box-shadow: 0 6px 20px rgba(90, 63, 53, .25);
+    }
+    #faq-toggle:hover { background: var(--violet); }
+    #faq-panel {
+      position: absolute; right: 0; bottom: 70px; width: min(340px, calc(100vw - 2.5rem));
+      background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 1.2rem;
+      box-shadow: 0 16px 40px rgba(90, 63, 53, .18);
+    }
+    #faq-panel[hidden] { display: none; }
+    #faq-panel h2 { font-size: 1.3rem; margin-bottom: .8rem; }
+    .faq-q {
+      display: block; width: 100%; text-align: left; font: inherit; font-size: .95rem; cursor: pointer;
+      background: var(--lilac-soft); border: none; border-radius: 12px; padding: .6rem .8rem; margin-bottom: .5rem; color: var(--ink);
+    }
+    .faq-q:hover, .faq-q[aria-expanded="true"] { background: var(--lilac); }
+    .faq-a { font-size: .93rem; color: var(--muted); padding: 0 .4rem .7rem; margin: 0; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid, .head, .closing-grid, .project.feature { grid-template-columns: 1fr; }
+      .hero-grid { padding: 3rem 0; gap: 3rem; }
+      .portrait { width: min(260px, 70%); }
+      .compact, .projects { grid-template-columns: 1fr; }
+      .skills { grid-template-columns: 1fr 1fr; }
+      .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .lang-btn {
+      font: inherit; font-weight: 700; font-size: .9rem; letter-spacing: .04em; cursor: pointer;
+      width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--ink);
+      background: transparent; color: var(--ink);
+    }
+    .lang-btn:hover { background: var(--ink); color: var(--paper); }
+    .menu-btn { display: inline-block; }
+      .links {
+        display: none; position: absolute; top: 68px; left: 0; right: 0;
+        flex-direction: column; align-items: flex-start; gap: 1rem;
+        padding: 1.2rem 1.25rem 1.5rem; background: var(--paper); border-bottom: 1px solid var(--line);
+      }
+      .links.open { display: flex; }
+    }
+    @media (max-width: 600px) {
+      .entry, .compact .entry { grid-template-columns: 1fr; gap: .3rem; }
+      .skills { grid-template-columns: 1fr; }
+      .contact-list li { grid-template-columns: 1fr; gap: .1rem; }
+      section.block { padding: 4rem 0; }
+      .project, .project.feature { padding: 1.4rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .signature path { animation: none; stroke-dashoffset: 0; }
+      .signature circle { animation: none; opacity: 1; }
+    }
+  </style>
 </head>
-
-
-
-<div id="chat-container">
-  <div id="chat-button">❔</div>
-
-  <div id="chat-box">
-    <div id="chat-header">FAQ – Chatbot</div>
-
-    <div id="faq-list">
-      <button class="faq-question" data-answer="Je travaille sur le produit, l’innovation, la data, et la mobilité internationale.">
-        Quels services proposes‑tu ?
-      </button>
-
-      <button class="faq-question" data-answer="Vous pouvez me contacter par email ou via LinkedIn.">
-        Comment me contacter ?
-      </button>
-
-      <button class="faq-question" data-answer="J’ai cofondé RISE, participé au challenge Innovatech, gagné le concours IONIS GOODWILLS 2025 et la deuxième place au concours des Galets du rhône ...">
-        Quels projets as‑tu réalisés ?
-      </button>
-    </div>
-
-    <div id="chat-messages"></div>
-  </div>
-</div>
-``
-
 
 <body>
   <header class="header">
-    <div class="container nav">
+    <div class="wrap nav">
       <a class="brand" href="#top" aria-label="Retour en haut">
         <span class="mark" aria-hidden="true">LS</span>
-        <span class="brand-text">
-          <strong>Léonie SCHMIT</strong>
-          <span>Big Data & Marketing Digital</span>
-        </span>
+        <strong>Léonie Schmit</strong>
       </a>
-
-      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks">
-        Menu
-      </button>
-
-      <nav class="links" id="navLinks" aria-label="Navigation">
+      <div class="nav-right">
+      <nav class="links" id="navLinks" aria-label="Navigation principale">
         <a href="#experience">Expériences</a>
         <a href="#projets">Projets</a>
         <a href="#formation">Formation</a>
         <a href="#competences">Compétences</a>
-        <a href="#contact">Contact</a>
-        <a class="cta" href="#cv">Télécharger CV</a>
+        <a class="cta" href="#contact">Me contacter</a>
       </nav>
+      <button class="lang-btn" id="langBtn" type="button" aria-label="Switch the site to English">EN</button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      </div>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="kicker">Étudiante en 4ᵉ année — ESME (2022–2027)</p>
-          <h1>Léonie SCHMIT</h1>
-          <p class="subtitle">
-            Ingénierie <strong>Big Data</strong> & <strong>Marketing Digital</strong>.
-            <br>Personne solaire et motivée, je mène mes projets avec discipline et rigueur.
-            J'ai fait de la gymnastique en compétition (10 ans, championnats de France, double médaillée) cela m’a appris l’engagement et le travail d’équipe.
-            Curieuse et engagée, j’aime voyager pour nourrir ma créativité, ma culture personnelle et mon état d'esprit. Je cherche des projets qui demandent précision et sens.
-          </p>
-
-          <div class="hero-actions">
+      <svg class="contours" viewBox="0 0 300 420" aria-hidden="true">
+        <path d="M0 40 C 90 70, 110 150, 150 230 S 230 360, 250 420" />
+        <path d="M0 90 C 70 120, 80 190, 115 260 S 180 370, 195 420" />
+        <path d="M0 150 C 50 175, 55 235, 80 290 S 130 380, 140 420" />
+        <path d="M0 210 C 30 230, 30 280, 48 320 S 80 390, 86 420" />
+        <circle cx="150" cy="230" r="4" /><circle cx="115" cy="260" r="4" /><circle cx="48" cy="320" r="4" /><circle cx="214" cy="330" r="4" />
+      </svg>
+      <div class="wrap hero-grid">
+        <div>
+          <p class="intro"><strong class="role">Data &amp; Strategy Analyst</strong><br>Étudiante ingénieure en 5ᵉ année à l’ESME, spécialité Big Data &amp; Marketing Digital</p>
+          <h1>Léonie<br>Schmit</h1>
+          <svg class="signature" viewBox="0 0 520 70" aria-hidden="true">
+            <path d="M6 40 C 120 34, 260 30, 380 33 S 480 38, 508 34" />
+            <circle cx="514" cy="34" r="5" />
+          </svg>
+          <p class="lede">Je relie la data, le marketing et la stratégie : faire parler les données pour aider à prendre de meilleures décisions.</p>
+          <p class="bio">Personne solaire et motivée, je mène mes projets avec discipline et rigueur. Dix ans de gymnastique en compétition, jusqu’aux championnats de France avec deux médailles, m’ont appris l’engagement et le travail d’équipe. J’aime voyager pour nourrir ma créativité, et je cherche des projets qui demandent précision et sens.</p>
+          <div class="actions">
             <a class="btn primary" href="#projets">Voir mes projets</a>
-            <a class="btn" href="mailto:leonie.schmit@esme.fr">Me contacter</a>
-            <a class="btn" href="#cv">Télécharger mon CV</a>
-          </div>
-
-          <div class="meta">
-            <div class="chip"><strong>Email</strong><span>leonie.schmit@esme.fr</span></div>
-            <div class="chip"><strong>Téléphone</strong><span>+33 7 68 58 26 83</span></div>
-            <div class="chip"><strong>Langues</strong><span>Français natif · Englais B2 · Allemand B1</span></div>
-            <div class="chip"><strong>Permis</strong><span>B</span></div>
+            <a class="btn" href="./assets/cv-leonie-schmit.pdf" data-cv download>Télécharger mon CV</a>
           </div>
         </div>
-
-        <aside class="photo">
-          <img src="./assets/photo-leonie.png" alt="Portrait de Léonie Schmit" />
+        <aside class="portrait">
+          <div class="frame-wrap"><div class="frame">
+            <img src="./assets/Leonie_Schmit_photo_pro.png" alt="Portrait de Léonie Schmit" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'initials',textContent:'LS'}))" />
+          </div></div>
+          <p class="facts">Recherche un stage de fin d’études<br>à l’international en 2027</p>
         </aside>
       </div>
     </section>
 
-    <section id="experience" class="section">
-  <div class="container">
-    <header class="section-head">
-      <h2>Expériences professionnelles</h2>
-      <p>Polyvalence, rigueur et relationnel — avec des contextes internationaux et événementiels.</p>
-    </header>
-
-    <div class="timeline">
-
-      <article class="item reveal">
-        <div class="when">2026 (Janvier, Février)</div>
-        <div class="what">
-          <div class="exp-header">
-            <h3 class="exp-title">Missions d’intérim (Valence)</h3>
-            <a href="https://www.samsic.com/" target="_blank" rel="noopener noreferrer" class="logo-link">
-              <img src="assets/Logo/Logo-samsic.png" alt="Samsic Logo" class="exp-logo">
-            </a>
-          </div>
-          <p>Vente en magasin, conditionnement/tri en usine, inventaires physiques pour divers clients.</p>
+    <section id="experience" class="block">
+      <div class="wrap">
+        <div class="head">
+          <h2>Expériences</h2>
+          <p>Deux stages chez Renault Trucks, côté data puis côté organisation, et des jobs qui m’ont appris le terrain, le contact client et l’anglais au quotidien.</p>
         </div>
-      </article>
 
-
-      <article class="item reveal">
-        <div class="when">2025 (Août)</div>
-        <div class="what">
-          <div class="exp-header">
-            <h3 class="exp-title">Ripeur — CDD (Valence)</h3>
-            <a href="https://www.pizzorno.com/" target="_blank" rel="noopener noreferrer" class="logo-link">
-              <img src="assets/Logo/Logo-pizzorno.png" alt="Pizzorno Logo" class="exp-logo">
-            </a>
-          </div>
-          <p>Travail physique en extérieur, respect des règles de sécurité, rapidité d'exécution et travail en équipe.</p>
-        </div>
-      </article>
-
-
-      <article class="item reveal">
-        <div class="when">2025 (Juin, Juillet)</div>
-        <div class="what">
-          <div class="exp-header">
-            <h3 class="exp-title">Stagiaire support managérial &amp; organisationnel</h3>
-            <a href="https://www.renault-trucks.fr/" target="_blank" rel="noopener noreferrer" class="logo-link">
-              <img src="assets/Logo/Logo-renault-trucks.png" alt="Renault Trucks Logo" class="exp-logo">
-            </a>
-          </div>
-          <p>Organisation et coordination des ateliers (développement produit, 3D, visites). Gestion de planning et logistique des événements internes. Animation et accompagnement de groupes. Collaboration avec les équipes d’ingénierie pour créer des activités pédagogiques.</p>
-        </div>
-      </article>
-
-
-      <article class="item reveal">
-        <div class="when">2024 — 2025</div>
-        <div class="what">
-          <h3 class="exp-title">Arbitre universitaire de volley-ball (Lyon)</h3>
-          <p>Arbitrage, concentration, prise de décision rapide, gestion du stress.</p>
-        </div>
-      </article>
-
-
-      <article class="item reveal">
-        <div class="when">2022 — 2024</div>
-        <div class="what">
-          <div class="exp-header">
-            <h3 class="exp-title">Hôtesse évènementielle</h3>
-            <a href="https://www.mahola.fr/" target="_blank" rel="noopener noreferrer" class="logo-link">
-              <img src="assets/Logo/Logo-mahola.png" alt="Mahola Logo" class="exp-logo">
-            </a>
-          </div>
-          <p>Accueil client, promotion, coordination sur événements sportifs, salons, soirées, travail en anglais.</p>
-        </div>
-      </article>
-
-
-      <article class="item reveal">
-        <div class="when">2023 (Juin, Juillet, Aout)</div>
-        <div class="what">
-          <div class="exp-header">
-            <h3 class="exp-title">Animatrice sportive en anglais</h3>
-            <a href="https://www.booking.com/hotel/cy/avlidahotel.fr.html" target="_blank" rel="noopener noreferrer" class="logo-link">
-              <img src="assets/Logo/Logo-avlida.png" alt="Avlida Logo" class="exp-logo">
-            </a>
-          </div>
-          <p>Animation pour une clientèle internationale, organisation d’activités, gestion de groupe, communication en anglais.</p>
-        </div>
-      </article>
-
-
-      <article class="item reveal">
-        <div class="when">2022 (Mars à Aout)</div>
-        <div class="what">
-          <h3 class="exp-title">Vendeuse (CDD)</h3>
-          <p>Encaissement, service client, gestion des stocks, rapidité d’exécution.</p>
-        </div>
-      </article>
-
-
-      <article class="item reveal">
-        <div class="when">2018 — 2022</div>
-        <div class="what">
-          <div class="exp-header">
-            <h3 class="exp-title">Animatrice de gymnastique — UGSP (Valence)</h3>
-            <a href="https://www.UGSP.fr/" target="_blank" rel="noopener noreferrer" class="logo-link">
-              <img src="assets/Logo/Logo-UGSP.png" alt="UGSP Logo" class="exp-logo">
-            </a>
-          </div>
-          <p>Encadrement, pédagogie, organisation, gestion de groupe.</p>
-        </div>
-      </article>
-
-
-      <article class="item reveal">
-        <div class="when">2018 — 2022</div>
-        <div class="what">
-          <div class="exp-header">
-            <h3 class="exp-title">Juge GAF (niv 1) &amp; TeamGym (niv 2) — UGSP (Valence)</h3>
-            <a href="https://www.UGSP.fr/" target="_blank" rel="noopener noreferrer" class="logo-link">
-              <img src="assets/Logo/Logo-UGSP.png" alt="UGSP Logo" class="exp-logo">
-            </a>
-          </div>
-          <p>Gestion d’équipe, prise de décision rapide, précision, sens des responsabilités.</p>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-    </section>
-
-    <section id="projets" class="section">
-      <div class="container">
-        <header class="section-head">
-          <h2>Projets & distinctions</h2>
-        </header>
-        <div class="grid-2">
-          
-          <article class="card reveal">
-            <div class="card-head">
-              <h3>RISE — plateforme mobilité internationale</h3>
-              <a>
-                <img src="assets/Logo/Logo-rise.png" alt="rise Logo" class="exp-logo">
-              </a>
-            </div>
-            <p>Co-fondatrice (2024). CEO, Vision produit, organisation, communication.</p>
-            <div class="row">
-              <span class="tag">Produit</span>
-              <span class="tag">International</span>
-              <span class="tag">Organisation</span>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="card-head">
-              <h3>Galets du Rhône 2025</h3>
-              <a href="https://lesgaletsdurhone.org/" target="_blank" rel="noopener noreferrer">
-                <img src="assets/Logo/Logo-galets-du-rhone.png" alt="Galets du Rhône Logo" class="exp-logo">
-              </a>
-            </div>
-            <p>Concours Suisse/France (2025). Projet entrepreneurial (RISE) financé, présentation devant jury transfrontalier.</p>
-            <div class="row">
-              <span class="tag">Concours</span>
-              <span class="tag">Impact</span>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="card-head">
-              <h3>Rou’cool — valise à roues rétractables</h3>
-              <a><img src="assets/Logo/Logo-roucool.png" alt="Rou’cool Logo" class="exp-logo">
-              </a>
-            </div>
-            <p>Projet ESME. Conception innovante orientée usage.</p>
-            <div class="row">
-              <span class="tag">Innovation</span>
-              <span class="tag">Prototypage</span>
-              <span class="tag">Prix</span>
-              <span class="tag">Marketing</span>
-              <span class="tag">UX</span>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="card-head">
-              <h3>IONIS GOODWILLS (2025)</h3>
-            </div>
-            <p>Lauréate (2025) parmis + de 400 candidatures.</p>
-            <div class="row">
-              <span class="tag">Prix</span>
-              <span class="tag">Concours</span>
-              <span class="tag">Pitch</span>
-            </div>
-          </article>
-          
-
-          <article class="card reveal">
-            <div class="card-head">
-              <h3>Stork</h3>
-            </div>
-            <p>Finaliste (2025) — 1ère place nationale. Stork un projet technologique sur le tourisme et la mobilité. Evènement organisé par l'association Elles Bougent.</p>
-            <div class="row">
-              <span class="tag">Concours</span>
-              <span class="tag">Pitch</span>
-              <span class="tag">Esprit d’équipe</span>
-            </div>
-          </article>
-          <article class="card reveal">
-            <div class="card-head">
-              <h3>Challenge Innovatech 2025 100% féminin (📍Paris- Ministère de l'économie et des finances publiques)</h3>
-              <a href="https://www.ellesbougent.com/actions/grands-rendez-vous/challenge-innovatech-2026-38/" target="_blank" rel="noopener noreferrer">
-                <img src="assets/Logo/Logo-elles-bougent.png" alt="Elles Bougent Logo" class="exp-logo">
-              </a>
-            </div>
-            <p>Finaliste (2025) — 1ère place nationale. Stork un projet technologique sur le tourisme et la mobilité. Evènement organisé par l'association Elles Bougent.</p>
-            <div class="row">
-              <span class="tag">Concours</span>
-              <span class="tag">Pitch</span>
-              <span class="tag">Esprit d’équipe</span>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="card-head">
-              <h3>Lauréat du Calendrier de l'avent (Décembre 2024)</h3>
-            </div>
-            <p>Lauréate parmis 24 projets.</p>
-            <div class="row">
-              <span class="tag">Prix</span>
-              <span class="tag">Concours</span>
-              <span class="tag">Pitch</span>
-              <span class="tag">Montage vidéo</span>
-              <span class="tag">Business plan</span>
-              <span class="tag">Organisation</span>
-            </div>
-          </article>
-          
-          
-
-        </div>
-      </div>
-    </section>
-
-
-
-    <section id="formation" class="section">
-      <div class="container">
-
-        <header class="section-head">
-          <h2>Formation</h2>
-          <p>Parcours orienté data, international et rigueur académique.</p>
-        </header>
-
-        <div class="timeline">
-
-          <article class="item reveal">
-            <div class="when">2022 — 2027</div>
-            <div class="what">
-              <div class="card-head">
-                <h3>ESME — Diplôme d’ingénieur Big Data & Digital Marketing</h3>
-                <a href="https://esme.fr/" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/Logo/Logo-esme.png" alt="ESME Logo" class="exp-logo">
-                </a>
-              <ul>
+        <div class="exp-group">
+          <h3>En entreprise</h3>
+          <ol class="timeline">
+            <li class="entry">
+              <div class="when">Juin – octobre 2026</div>
+              <div>
+                <div class="entry-head">
+                  <h4>Stagiaire data scientist<span class="org">Renault Trucks</span></h4>
+                  <a href="https://www.renault-trucks.fr/" target="_blank" rel="noopener noreferrer"><img class="logo" src="assets/Logo/Logo-renault-trucks.png" alt="Renault Trucks" onerror="this.remove()"></a>
+                </div>
+                <ul>
+                  <li>Développement d’une application Streamlit de clustering (K-Means) de séries temporelles météo, destinée aux simulations thermiques.</li>
+                  <li>Migration et optimisation de 4 dashboards Power BI de suivi de l’évolution des pièces moteur, utilisés par les équipes Qualité et Développement pour améliorer le SAV et orienter les travaux de développement.</li>
+                  <li>Recréation et optimisation de tables et de requêtes SQL sur Databricks.</li>
+                  <li>Création d’un site web d’équipe alimenté par des données CSV, hébergé sur GitHub Pages.</li>
+                </ul>
+                <p class="stack">Python, Pandas, tslearn, Plotly, Streamlit, Power BI, SQL, Databricks</p>
               </div>
-                <li>Big Data, bases de données, programmation</li>
-                <li>Marketing digital & approche produit</li>
-              </ul>
-            </div>
-          </article>
-
-  
-          <article class="item reveal">
-            <div class="when">2025</div>
-            <div class="what">
-              <div class="card-head">
-                <h3>VUT Brno (République Tchèque)</h3>
-                <a href="https://www.vut.cz/en/" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/Logo/Logo-vut.png" alt="VUT Logo" class="exp-logo">
-                </a>
+            </li>
+            <li class="entry">
+              <div class="when">Juin – juillet 2025</div>
+              <div>
+                <div class="entry-head">
+                  <h4>Stagiaire support managérial et organisationnel<span class="org">Renault Trucks</span></h4>
+                  <a href="https://www.renault-trucks.fr/" target="_blank" rel="noopener noreferrer"><img class="logo" src="assets/Logo/Logo-renault-trucks.png" alt="Renault Trucks" onerror="this.remove()"></a>
                 </div>
-              <p>Semestre académique international.</p>
-            </div>
-          </article>
+                <ul>
+                  <li>Conception d’un jeu pédagogique et d’un livret d’orientation pour promouvoir les métiers de Renault Trucks auprès de lycéens.</li>
+                  <li>Organisation et coordination des ateliers (développement produit, 3D, visites) avec les équipes d’ingénierie.</li>
+                  <li>Gestion de planning, logistique des événements internes et encadrement d’un groupe de 40 élèves de seconde.</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
 
-          <article class="item reveal">
-            <div class="when">2022</div>
-            <div class="what">
-              <div class="card-head">
-                <h3>Baccalauréat général — Institut Notre Dame (Valence)</h3>
-                <a href="https://www.ind-valence.fr/" target="_blank" rel="noopener noreferrer">
-                  <img src="assets/Logo/Logo-ind.png" alt="IND Logo" class="exp-logo">
-                </a>
-                </div>
-              <p>Obtention du diplôme (2022).</p>
-            </div>
-          </article>
-    </div>
-  </div>
-</section>
-
-    <section id="competences" class="section">
-      <div class="container">
-        <header class="section-head">
-          <h2>Compétences</h2>
-          <p>Technos essentielles, outils, soft skills et langues.</p>
-        </header>
-
-        <div class="grid-2">
-          <article class="card reveal">
-            <h3>Techniques</h3>
-            <div class="row">
-              <span class="tag">HTML / CSS</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Machine Learning</span>
-            </div>
-            <p class="small">Outils : VS Code, GitHub, Pack Office, XAMPP, Canva</p>
-          </article>
-
-          <article class="card reveal">
-            <h3>Soft skills</h3>
-            <div class="row">
-              <span class="tag">Créativité</span><span class="tag">Adaptabilité</span><span class="tag">Organisation</span><span class="tag">Excellent relationnel</span><span class="tag">Travail en équipe</span>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <h3>Langues</h3>
-            <div class="row">
-              <span class="tag">Français — natif</span><span class="tag">Anglais — B2</span><span class="tag">Allemand — B1</span>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <h3>Qualités</h3>
-            <ul class="small" style="margin:10px 0 0; padding-left:18px; color: var(--muted);">
-              <li>Gestion de projet & organisation</li>
-              <li>Coordination d’équipes étudiantes</li>
-              <li>Organisation d’événements</li>
-              <li>Sens des priorités, respect des deadlines</li>
-              <li>Travail en équipe et en autonomie</li>
-            </ul>
-          </article>
+        <div class="exp-group">
+          <h3>Jobs étudiants et engagements</h3>
+          <ol class="timeline compact">
+            <li class="entry">
+              <div class="when">Janv. – févr. 2026</div>
+              <div>
+                <div class="entry-head"><h4>Missions d’intérim, Samsic</h4></div>
+                <p>Vente en magasin, conditionnement et tri en usine, inventaires physiques.</p>
+              </div>
+            </li>
+            <li class="entry">
+              <div class="when">Août 2025</div>
+              <div>
+                <div class="entry-head"><h4>Ripeuse, Pizzorno</h4></div>
+                <p>Travail physique en extérieur, règles de sécurité, rapidité et travail en équipe.</p>
+              </div>
+            </li>
+            <li class="entry">
+              <div class="when">2024 – 2025</div>
+              <div>
+                <div class="entry-head"><h4>Arbitre universitaire de volley-ball</h4></div>
+                <p>Concentration, décisions rapides et gestion du stress, à Lyon.</p>
+              </div>
+            </li>
+            <li class="entry">
+              <div class="when">2022 – 2024</div>
+              <div>
+                <div class="entry-head"><h4>Hôtesse événementielle, Mahola</h4></div>
+                <p>Accueil, promotion et coordination sur des événements sportifs, salons et soirées, en anglais.</p>
+              </div>
+            </li>
+            <li class="entry">
+              <div class="when">Été 2023</div>
+              <div>
+                <div class="entry-head"><h4>Animatrice sportive en anglais, Avlida Hotel</h4></div>
+                <p>Animation pour une clientèle internationale, organisation d’activités et gestion de groupe.</p>
+              </div>
+            </li>
+            <li class="entry">
+              <div class="when">Mars – août 2022</div>
+              <div>
+                <div class="entry-head"><h4>Vendeuse</h4></div>
+                <p>Encaissement, service client et gestion des stocks.</p>
+              </div>
+            </li>
+            <li class="entry">
+              <div class="when">2018 – 2022</div>
+              <div>
+                <div class="entry-head"><h4>Animatrice et juge de gymnastique, UGSP Valence</h4></div>
+                <p>Encadrement de groupes, pédagogie ; juge GAF niveau 1 et TeamGym niveau 2.</p>
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
 
-    <section id="cv" class="section">
-      <div class="container">
-        <header class="section-head">
-          <h2>Télécharger mon CV</h2>
-        </header>
+    <section id="projets" class="block">
+      <div class="wrap">
+        <div class="head">
+          <h2>Projets</h2>
+          <p>De l’analyse de données à la stratégie marketing, en passant par le développement web et une plateforme que je construis depuis 2024.</p>
+        </div>
 
-        <article class="card reveal">
-          <div class="cv-row">
+        <div class="filters" role="group" aria-label="Filtrer les projets">
+          <button type="button" data-filter="all" aria-pressed="true">Tous</button>
+          <button type="button" data-filter="data" aria-pressed="false">Data</button>
+          <button type="button" data-filter="marketing" aria-pressed="false">Marketing et stratégie</button>
+          <button type="button" data-filter="entrepreneuriat" aria-pressed="false">Entrepreneuriat</button>
+          <button type="button" data-filter="web" aria-pressed="false">Développement web</button>
+        </div>
+
+        <div class="projects">
+          <article class="project feature" data-cat="entrepreneuriat web">
             <div>
-              <h3>CV — Léonie Schmit (PDF)</h3>
+              <p class="kind">CEO et co-fondatrice, depuis 2024</p>
+              <h3>RISE</h3>
+              <p>Une plateforme web qui centralise tout ce qu’un étudiant doit savoir avant de partir à l’étranger : universités partenaires, cours, logement, vie locale. Pour les services internationaux des écoles, elle structure les données et aide à piloter les échanges.</p>
+              <p class="tools">Gestion de projet, back-end, base de données, UX</p>
             </div>
-            <a class="btn primary" href="./assets/cv-leonie-schmit.pdf" download>Télécharger</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="container">
-        <header class="section-head">
-          <h2>Contact</h2>
-        </header>
-
-        <div class="contact-grid">
-          <article class="card reveal">
-            <h3>Écrivons-nous</h3>
-            <p class="small">
-              Email : <a href="mailto:leonie.schmit@esme.fr">leonie.schmit@esme.fr</a><br />
-              Téléphone : <a href="tel:+33768582683">+33 7 68 58 26 83</a>
-            </p>
-            <div class="hero-actions">
-              <a class="btn primary" href="mailto:leonie.schmit@esme.fr?subject=Contact%20portfolio%20-%20L%C3%A9onie%20Schmit">Envoyer un email</a>
-              <a class="btn" href="https://www.linkedin.com/in/l%C3%A9onie-schmit-7248b5259/" target="_blank" rel="noreferrer">LinkedIn</a>
-            </div>
+            <ul>
+              <li>Conception du projet et de ses fonctionnalités : carte des universités partenaires, carte interactive collaborative de bons plans.</li>
+              <li>Back-end et base de données de la plateforme.</li>
+              <li>Développement du réseau et partenariat avec le service international de l’ESME.</li>
+              <li>Dépôt de la marque RISE à l’INPI (2025).</li>
+              <li>Lauréate IONIS Innovation 2025, Calendrier de l’Avent ESME 2024 et 2ᵉ place aux Galets du Rhône 2025.</li>
+            </ul>
           </article>
 
-          <article class="card reveal">
-            <h3>Infos rapides</h3>
-            <ul>
-              <li>Localisation : France / Etranger</li>
-              <li>Disponibilité : Juin 2026 - Septembre 2026</li>
-              <li>Permis : B</li>
-            </ul>
-            
+          <article class="project" data-cat="web">
+            <p class="kind">Projet personnel, été 2026</p>
+            <h3>Istanbul Quest</h3>
+            <p>Une application web d’événement que j’ai conçue et développée seule : mini-jeux comme un travel bingo et une chasse au trésor, points par équipes et mini-équipes, espace d’administration et cérémonie de remise d’awards.</p>
+            <p class="tools">Next.js, React, TypeScript, Tailwind CSS, Firebase, Framer Motion, Vitest · <a class="more" href="https://github.com/Leonies29/friends" target="_blank" rel="noopener noreferrer">Voir le code</a></p>
+          </article>
+
+          <article class="project" data-cat="data">
+            <p class="kind">Stage Renault Trucks, 2026</p>
+            <h3>Weather Clustering Explorer</h3>
+            <p>Application Streamlit qui regroupe des profils de température journaliers par K-Means pour choisir des journées types à simuler. Intégration des sources météo, visualisations interactives et export des résultats.</p>
+            <p class="tools">Python, tslearn, Plotly, Pandas, Streamlit</p>
+          </article>
+
+          <article class="project" data-cat="marketing">
+            <p class="kind">Cours de stratégie marketing, 2026</p>
+            <h3>Jackars</h3>
+            <p>Stratégie marketing et data marketing d’une marque automobile premium : analyse de marché, benchmark (Alpine, Ferrari, Tesla), PESTEL, segmentation-ciblage-positionnement, 4P, customer journey, benchmark SEO, structure CRM et scénarios de marketing automation.</p>
+            <p class="tools">Ahrefs, CRM, Canva</p>
+          </article>
+
+          <article class="project" data-cat="data marketing">
+            <p class="kind">Projet de groupe, data visualisation</p>
+            <h3>Analyse des ventes d’un magasin</h3>
+            <p>Dashboard Power BI et application Streamlit pour comprendre les ventes d’une enseigne multicanale : produits champions, pépites premium, affinités par ville et par canal, puis recommandations sur l’assortiment, le stock et les budgets marketing.</p>
+            <p class="tools">Power BI, Python, Plotly, Streamlit · <a class="more" href="https://github.com/Leonies29/data-viz-analyse-vente" target="_blank" rel="noopener noreferrer">Voir le code</a></p>
+          </article>
+
+          <article class="project" data-cat="data">
+            <p class="kind">Projet de groupe, data mining, 2026</p>
+            <h3>Prédiction du diabète</h3>
+            <div class="metric-row">
+              <div><div class="metric">75 %</div><span>accuracy (AdaBoost)</span></div>
+              <div><div class="metric">4</div><span>modèles comparés</span></div>
+            </div>
+            <p>Comparaison de Decision Tree, Random Forest, KNN et AdaBoost sur des données cliniques, complétée par des règles d’association et un clustering hiérarchique.</p>
+            <p class="tools">Python, scikit-learn, Pandas, Seaborn</p>
+          </article>
+
+          <article class="project" data-cat="entrepreneuriat">
+            <p class="kind">Projet ESME, 2025</p>
+            <h3>Rou’cool</h3>
+            <p>Une valise à roues rétractables, pensée à partir des usages des voyageurs. Lauréate IONIS Goodwills 2025 parmi plus de 400 candidatures.</p>
+            <p class="tools">Innovation, prototypage, marketing, UX</p>
+          </article>
+
+          <article class="project" data-cat="entrepreneuriat">
+            <p class="kind">Challenge Innovatech, Elles Bougent, 2025</p>
+            <h3>Stork</h3>
+            <p>Projet technologique 100 % féminin sur le tourisme et la mobilité, finaliste du Challenge Innovatech (1ʳᵉ place nationale) et présenté au Ministère de l’Économie à Paris.</p>
+            <p class="tools">Pitch, travail d’équipe</p>
           </article>
         </div>
 
-        <footer class="footer">
-          <p>© <span id="year"></span> Léonie Schmit </p>
-        </footer>
+        <ul class="awards" aria-label="Distinctions" style="margin-top:4rem">
+          <li><span class="rank">Finaliste</span><p>Challenge Innovatech 2025, 1ʳᵉ place nationale</p></li>
+          <li><span class="rank">2ᵉ place</span><p>Concours Galets du Rhône 2025, Suisse et France</p></li>
+          <li><span class="rank">Lauréate</span><p>IONIS Innovation 2025 et IONIS Goodwills 2025</p></li>
+          <li><span class="rank">Lauréate</span><p>Calendrier de l’Avent ESME 2024, parmi 24 projets</p></li>
+        </ul>
       </div>
+    </section>
+
+    <section id="formation" class="block">
+      <div class="wrap">
+        <div class="head">
+          <h2>Formation</h2>
+          <p>Un parcours d’ingénieure qui mêle data, marketing et ouverture internationale.</p>
+        </div>
+        <ol class="timeline edu">
+          <li class="entry">
+            <div class="when">2022 – 2027</div>
+            <div>
+              <div class="entry-head">
+                <h4>ESME, diplôme d’ingénieur<span class="org">Spécialité Big Data &amp; Marketing Digital, Ivry-sur-Seine</span></h4>
+                <a href="https://esme.fr/" target="_blank" rel="noopener noreferrer"><img class="logo" src="assets/Logo/Logo-esme.png" alt="ESME" onerror="this.remove()"></a>
+              </div>
+              <p>Big Data, machine learning et data mining, data visualisation, stratégie marketing et data marketing, marketing digital et Google Analytics.</p>
+            </div>
+          </li>
+          <li class="entry">
+            <div class="when">2025</div>
+            <div>
+              <div class="entry-head">
+                <h4>VUT Brno<span class="org">Semestre d’échange, République tchèque</span></h4>
+                <a href="https://www.vut.cz/en/" target="_blank" rel="noopener noreferrer"><img class="logo" src="assets/Logo/Logo-vut.png" alt="VUT Brno" onerror="this.remove()"></a>
+              </div>
+            </div>
+          </li>
+          <li class="entry">
+            <div class="when">2022</div>
+            <div>
+              <div class="entry-head">
+                <h4>Baccalauréat général<span class="org">Institut Notre-Dame, Valence</span></h4>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="competences" class="block">
+      <div class="wrap">
+        <div class="head">
+          <h2>Compétences</h2>
+          <p>Ce que j’utilise vraiment, en stage et en projet.</p>
+        </div>
+        <div class="skills">
+          <div>
+            <h3>Data et machine learning</h3>
+            <ul>
+              <li>Python, Pandas, SQL</li>
+              <li>scikit-learn, tslearn</li>
+              <li>Classification, clustering, séries temporelles</li>
+              <li>Règles d’association</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Visualisation</h3>
+            <ul>
+              <li>Power BI</li>
+              <li>Plotly, Streamlit</li>
+              <li>Databricks</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Marketing et stratégie</h3>
+            <ul>
+              <li>Segmentation, ciblage, positionnement</li>
+              <li>Marketing mix, customer journey</li>
+              <li>CRM, marketing automation</li>
+              <li>SEO (Ahrefs), Google Analytics</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Web et outils</h3>
+            <ul>
+              <li>HTML, CSS, JavaScript, TypeScript</li>
+              <li>Next.js, React, Tailwind CSS, Firebase</li>
+              <li>Git, GitHub, VS Code</li>
+              <li>Microsoft Office, Canva</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Langues</h3>
+            <ul>
+              <li>Français, langue maternelle</li>
+              <li>Anglais, B2</li>
+              <li>Allemand, B1</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Façon de travailler</h3>
+            <ul>
+              <li>Gestion de projet et coordination d’équipe</li>
+              <li>Organisation d’événements</li>
+              <li>Sens des priorités et des délais</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="block closing">
+      <div class="wrap closing-grid">
+        <div>
+          <h2>Travaillons ensemble</h2>
+          <p class="lede">Je cherche un stage de fin d’études à l’international en 2027, pour monter en compétences en analyse stratégique et en marketing en m’appuyant sur la data.</p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:leonie.schmit@esme.fr?subject=Contact%20portfolio%20-%20L%C3%A9onie%20Schmit">Envoyer un email</a>
+            <a class="btn" href="./assets/cv-leonie-schmit.pdf" data-cv download>Télécharger mon CV</a>
+          </div>
+        </div>
+        <ul class="contact-list">
+          <li><span>Email</span><a href="mailto:leonie.schmit@esme.fr">leonie.schmit@esme.fr</a></li>
+          <li><span>Téléphone</span><a href="tel:+33768582683">+33 7 68 58 26 83</a></li>
+          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/leonie-schmit" target="_blank" rel="noopener noreferrer">leonie-schmit</a></li>
+          <li><span>GitHub</span><a href="https://github.com/Leonies29" target="_blank" rel="noopener noreferrer">Leonies29</a></li>
+          <li><span>Mobilité</span>Basée à Paris, prête à partir à l’étranger</li>
+          <li><span>Permis</span>B</li>
+        </ul>
+      </div>
+      <footer class="wrap footer">© <span id="year"></span> Léonie Schmit</footer>
     </section>
   </main>
 
-  <script src="./js/script.js"></script>
+  <div id="faq">
+    <div id="faq-panel" hidden>
+      <h2>Questions fréquentes</h2>
+      <button class="faq-q" type="button" aria-expanded="false">Quel stage recherches-tu ?</button>
+      <p class="faq-a" hidden>Un stage de fin d’études à l’international en 2027, mêlant data, analyse stratégique et marketing.</p>
+      <button class="faq-q" type="button" aria-expanded="false">Quels projets as-tu réalisés ?</button>
+      <p class="faq-a" hidden>J’ai cofondé RISE, une plateforme de mobilité internationale. En stage, j’ai développé une application de clustering météo et des dashboards Power BI. J’ai aussi mené des projets en data mining, data visualisation et stratégie marketing.</p>
+      <button class="faq-q" type="button" aria-expanded="false">Comment te contacter ?</button>
+      <p class="faq-a" hidden>Par email à leonie.schmit@esme.fr, par téléphone ou via LinkedIn.</p>
+    </div>
+    <button id="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-panel" aria-label="Ouvrir les questions fréquentes">?</button>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    const filterBtns = document.querySelectorAll('.filters button');
+    const projects = document.querySelectorAll('.project');
+    filterBtns.forEach(btn => btn.addEventListener('click', () => {
+      const f = btn.dataset.filter;
+      filterBtns.forEach(b => b.setAttribute('aria-pressed', b === btn));
+      projects.forEach(p => {
+        const cats = p.dataset.cat.split(' ');
+        p.hidden = !(f === 'all' || cats.includes(f));
+      });
+    }));
+
+    const faqToggle = document.getElementById('faq-toggle');
+    const faqPanel = document.getElementById('faq-panel');
+    faqToggle.addEventListener('click', () => {
+      const open = faqPanel.hidden;
+      faqPanel.hidden = !open;
+      faqToggle.setAttribute('aria-expanded', open);
+      faqToggle.textContent = open ? '×' : '?';
+    });
+    document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => {
+      const a = q.nextElementSibling;
+      const open = a.hidden;
+      a.hidden = !open;
+      q.setAttribute('aria-expanded', open);
+    }));
+    /* ---------- FR / EN ---------- */
+    const EN = {
+      "Expériences": "Experience",
+      "Projets": "Projects",
+      "Formation": "Education",
+      "Compétences": "Skills",
+      "Me contacter": "Contact me",
+      "Étudiante ingénieure en 5ᵉ année à l’ESME, spécialité Big Data & Marketing Digital": "Final-year engineering student at ESME, majoring in Big Data & Digital Marketing",
+      "Je relie la data, le marketing et la stratégie : faire parler les données pour aider à prendre de meilleures décisions.": "I connect data, marketing and strategy: turning data into insights that lead to better decisions.",
+      "Personne solaire et motivée, je mène mes projets avec discipline et rigueur. Dix ans de gymnastique en compétition, jusqu’aux championnats de France avec deux médailles, m’ont appris l’engagement et le travail d’équipe. J’aime voyager pour nourrir ma créativité, et je cherche des projets qui demandent précision et sens.": "Upbeat and driven, I run my projects with discipline and rigor. Ten years of competitive gymnastics, up to the French national championships with two medals, taught me commitment and teamwork. I love travelling to feed my creativity, and I look for projects that call for precision and purpose.",
+      "Voir mes projets": "See my projects",
+      "Télécharger mon CV": "Download my CV",
+      "Recherche un stage de fin d’études": "Looking for an end-of-studies internship",
+      "à l’international en 2027": "abroad in 2027",
+      "Deux stages chez Renault Trucks, côté data puis côté organisation, et des jobs qui m’ont appris le terrain, le contact client et l’anglais au quotidien.": "Two internships at Renault Trucks, in data and in organization, plus jobs that taught me hands-on work, customer contact and everyday English.",
+      "En entreprise": "Internships",
+      "Juin – octobre 2026": "June – October 2026",
+      "Stagiaire data scientist": "Data Scientist Intern",
+      "Développement d’une application Streamlit de clustering (K-Means) de séries temporelles météo, destinée aux simulations thermiques.": "Developed a Streamlit application for K-Means clustering of weather time series, supporting thermal simulations.",
+      "Migration et optimisation de 4 dashboards Power BI de suivi de l’évolution des pièces moteur, utilisés par les équipes Qualité et Développement pour améliorer le SAV et orienter les travaux de développement.": "Migrated and optimized 4 Power BI dashboards tracking engine parts over time, used by Quality and Development engineering teams to improve after-sales service and guide development work.",
+      "Recréation et optimisation de tables et de requêtes SQL sur Databricks.": "Rebuilt and optimized SQL tables and queries on Databricks.",
+      "Création d’un site web d’équipe alimenté par des données CSV, hébergé sur GitHub Pages.": "Built a team website driven by CSV data files, hosted on GitHub Pages.",
+      "Juin – juillet 2025": "June – July 2025",
+      "Stagiaire support managérial et organisationnel": "Management & Organizational Support Intern",
+      "Conception d’un jeu pédagogique et d’un livret d’orientation pour promouvoir les métiers de Renault Trucks auprès de lycéens.": "Designed an educational game and a career guide booklet to promote Renault Trucks jobs to high-school students.",
+      "Organisation et coordination des ateliers (développement produit, 3D, visites) avec les équipes d’ingénierie.": "Organized and coordinated workshops (product development, 3D, site visits) with engineering teams.",
+      "Gestion de planning, logistique des événements internes et encadrement d’un groupe de 40 élèves de seconde.": "Managed schedules and internal event logistics, and supervised a group of 40 high-school students.",
+      "Jobs étudiants et engagements": "Student jobs and activities",
+      "Janv. – févr. 2026": "Jan. – Feb. 2026",
+      "Missions d’intérim, Samsic": "Temp assignments, Samsic",
+      "Vente en magasin, conditionnement et tri en usine, inventaires physiques.": "In-store sales, factory packing and sorting, stock counts.",
+      "Août 2025": "August 2025",
+      "Ripeuse, Pizzorno": "Waste collection operative, Pizzorno",
+      "Travail physique en extérieur, règles de sécurité, rapidité et travail en équipe.": "Outdoor physical work, safety rules, speed and teamwork.",
+      "Arbitre universitaire de volley-ball": "University volleyball referee",
+      "Concentration, décisions rapides et gestion du stress, à Lyon.": "Focus, quick decisions and handling pressure, in Lyon.",
+      "Hôtesse événementielle, Mahola": "Event hostess, Mahola",
+      "Accueil, promotion et coordination sur des événements sportifs, salons et soirées, en anglais.": "Welcoming guests, promotion and coordination at sports events, trade fairs and evening events, in English.",
+      "Été 2023": "Summer 2023",
+      "Animatrice sportive en anglais, Avlida Hotel": "Sports activities host in English, Avlida Hotel",
+      "Animation pour une clientèle internationale, organisation d’activités et gestion de groupe.": "Ran activities for international guests and managed groups.",
+      "Mars – août 2022": "March – August 2022",
+      "Vendeuse": "Sales assistant",
+      "Encaissement, service client et gestion des stocks.": "Checkout, customer service and stock management.",
+      "Animatrice et juge de gymnastique, UGSP Valence": "Gymnastics coach and judge, UGSP Valence",
+      "Encadrement de groupes, pédagogie ; juge GAF niveau 1 et TeamGym niveau 2.": "Coaching groups and teaching; certified judge in women’s artistic gymnastics (level 1) and TeamGym (level 2).",
+      "De l’analyse de données à la stratégie marketing, en passant par le développement web et une plateforme que je construis depuis 2024.": "From data analysis to marketing strategy, through web development and a platform I have been building since 2024.",
+      "Tous": "All",
+      "Marketing et stratégie": "Marketing & strategy",
+      "Entrepreneuriat": "Entrepreneurship",
+      "Développement web": "Web development",
+      "Projet personnel, été 2026": "Personal project, summer 2026",
+      "Une application web d’événement que j’ai conçue et développée seule : mini-jeux comme un travel bingo et une chasse au trésor, points par équipes et mini-équipes, espace d’administration et cérémonie de remise d’awards.": "An event web app I designed and built on my own: mini-games such as a travel bingo and a treasure hunt, team and sub-team scoring, an admin space and an awards ceremony.",
+      "CEO et co-fondatrice, depuis 2024": "CEO & co-founder, since 2024",
+      "Une plateforme web qui centralise tout ce qu’un étudiant doit savoir avant de partir à l’étranger : universités partenaires, cours, logement, vie locale. Pour les services internationaux des écoles, elle structure les données et aide à piloter les échanges.": "A web platform that brings together everything a student needs before going abroad: partner universities, courses, housing, local life. For schools’ international offices, it structures the data and helps manage exchanges.",
+      "Gestion de projet, back-end, base de données, UX": "Project management, back end, database, UX",
+      "Conception du projet et de ses fonctionnalités : carte des universités partenaires, carte interactive collaborative de bons plans.": "Designed the product and its features: a partner university map and a collaborative interactive map of local tips.",
+      "Back-end et base de données de la plateforme.": "Built the platform’s back end and database.",
+      "Développement du réseau et partenariat avec le service international de l’ESME.": "Grew the project’s network and secured a partnership with ESME’s international office.",
+      "Dépôt de la marque RISE à l’INPI (2025).": "Registered the RISE trademark with INPI, the French IP office (2025).",
+      "Lauréate IONIS Innovation 2025, Calendrier de l’Avent ESME 2024 et 2ᵉ place aux Galets du Rhône 2025.": "Winner of IONIS Innovation 2025 and the ESME Advent Calendar 2024, and 2nd place at Galets du Rhône 2025.",
+      "Stage Renault Trucks, 2026": "Renault Trucks internship, 2026",
+      "Application Streamlit qui regroupe des profils de température journaliers par K-Means pour choisir des journées types à simuler. Intégration des sources météo, visualisations interactives et export des résultats.": "A Streamlit app that groups daily temperature profiles with K-Means to pick representative days to simulate. Weather data integration, interactive charts and results export.",
+      "Cours de stratégie marketing, 2026": "Marketing strategy course, 2026",
+      "Stratégie marketing et data marketing d’une marque automobile premium : analyse de marché, benchmark (Alpine, Ferrari, Tesla), PESTEL, segmentation-ciblage-positionnement, 4P, customer journey, benchmark SEO, structure CRM et scénarios de marketing automation.": "Marketing and data marketing strategy for a premium car brand: market analysis, benchmark (Alpine, Ferrari, Tesla), PESTEL, segmentation-targeting-positioning, 4P, customer journey, SEO benchmark, CRM structure and marketing automation scenarios.",
+      "Projet de groupe, data visualisation": "Group project, data visualization",
+      "Analyse des ventes d’un magasin": "Retail sales analysis",
+      "Dashboard Power BI et application Streamlit pour comprendre les ventes d’une enseigne multicanale : produits champions, pépites premium, affinités par ville et par canal, puis recommandations sur l’assortiment, le stock et les budgets marketing.": "Power BI dashboard and Streamlit app to understand a multichannel retailer’s sales: top products, premium gems, city and channel affinities, then recommendations on assortment, inventory and marketing budgets.",
+      "Voir le code": "View the code",
+      "Projet de groupe, data mining, 2026": "Group project, data mining, 2026",
+      "Prédiction du diabète": "Diabetes prediction",
+      "modèles comparés": "models compared",
+      "Comparaison de Decision Tree, Random Forest, KNN et AdaBoost sur des données cliniques, complétée par des règles d’association et un clustering hiérarchique.": "Compared Decision Tree, Random Forest, KNN and AdaBoost on clinical data, alongside association rules and hierarchical clustering.",
+      "Projet ESME, 2025": "ESME project, 2025",
+      "Une valise à roues rétractables, pensée à partir des usages des voyageurs. Lauréate IONIS Goodwills 2025 parmi plus de 400 candidatures.": "A suitcase with retractable wheels, designed around how travellers actually use it. IONIS Goodwills 2025 winner out of 400+ applications.",
+      "Innovation, prototypage, marketing, UX": "Innovation, prototyping, marketing, UX",
+      "Projet technologique 100 % féminin sur le tourisme et la mobilité, finaliste du Challenge Innovatech (1ʳᵉ place nationale) et présenté au Ministère de l’Économie à Paris.": "An all-female tech project on tourism and mobility, Innovatech Challenge finalist (1st place nationally), presented at the French Ministry of the Economy in Paris.",
+      "Pitch, travail d’équipe": "Pitching, teamwork",
+      "Finaliste": "Finalist",
+      "Challenge Innovatech 2025, 1ʳᵉ place nationale": "Innovatech Challenge 2025, 1st place nationally",
+      "2ᵉ place": "2nd place",
+      "Concours Galets du Rhône 2025, Suisse et France": "Galets du Rhône 2025 competition, Switzerland and France",
+      "Lauréate": "Winner",
+      "IONIS Innovation 2025 et IONIS Goodwills 2025": "IONIS Innovation 2025 and IONIS Goodwills 2025",
+      "Calendrier de l’Avent ESME 2024, parmi 24 projets": "ESME Advent Calendar 2024, out of 24 projects",
+      "Un parcours d’ingénieure qui mêle data, marketing et ouverture internationale.": "An engineering path that blends data, marketing and international experience.",
+      "ESME, diplôme d’ingénieur": "ESME, Master of Engineering",
+      "Spécialité Big Data & Marketing Digital, Ivry-sur-Seine": "Big Data & Digital Marketing major, Paris area",
+      "Big Data, machine learning et data mining, data visualisation, stratégie marketing et data marketing, marketing digital et Google Analytics.": "Big Data, machine learning and data mining, data visualization, marketing and data marketing strategy, digital marketing and Google Analytics.",
+      "Semestre d’échange, République tchèque": "Exchange semester, Czech Republic",
+      "Baccalauréat général": "French Baccalaureate",
+      "Ce que j’utilise vraiment, en stage et en projet.": "What I actually use, in internships and projects.",
+      "Data et machine learning": "Data & machine learning",
+      "Classification, clustering, séries temporelles": "Classification, clustering, time series",
+      "Règles d’association": "Association rules",
+      "Visualisation": "Visualization",
+      "Segmentation, ciblage, positionnement": "Segmentation, targeting, positioning",
+      "Web et outils": "Web & tools",
+      "Langues": "Languages",
+      "Français, langue maternelle": "French, native",
+      "Anglais, B2": "English, B2",
+      "Allemand, B1": "German, B1",
+      "Façon de travailler": "How I work",
+      "Gestion de projet et coordination d’équipe": "Project management and team coordination",
+      "Organisation d’événements": "Event organization",
+      "Sens des priorités et des délais": "Clear priorities, deadlines met",
+      "Travaillons ensemble": "Let’s work together",
+      "Je cherche un stage de fin d’études à l’international en 2027, pour monter en compétences en analyse stratégique et en marketing en m’appuyant sur la data.": "I’m looking for an end-of-studies internship abroad in 2027, to grow my strategic analysis and marketing skills on a strong data foundation.",
+      "Envoyer un email": "Send an email",
+      "Téléphone": "Phone",
+      "Mobilité": "Mobility",
+      "Basée à Paris, prête à partir à l’étranger": "Based in Paris, ready to relocate abroad",
+      "Permis": "Driving licence",
+      "Questions fréquentes": "FAQ",
+      "Quel stage recherches-tu ?": "What internship are you looking for?",
+      "Un stage de fin d’études à l’international en 2027, mêlant data, analyse stratégique et marketing.": "An end-of-studies internship abroad in 2027, combining data, strategic analysis and marketing.",
+      "Quels projets as-tu réalisés ?": "What projects have you worked on?",
+      "J’ai cofondé RISE, une plateforme de mobilité internationale. En stage, j’ai développé une application de clustering météo et des dashboards Power BI. J’ai aussi mené des projets en data mining, data visualisation et stratégie marketing.": "I co-founded RISE, an international student mobility platform. During my internship I built a weather clustering app and Power BI dashboards. I’ve also led projects in data mining, data visualization and marketing strategy.",
+      "Comment te contacter ?": "How can I reach you?",
+      "Par email à leonie.schmit@esme.fr, par téléphone ou via LinkedIn.": "By email at leonie.schmit@esme.fr, by phone or on LinkedIn."
+    };
+    const META = {
+      fr: { title: document.title, desc: document.querySelector('meta[name="description"]').content,
+            menu: "Menu", top: "Retour en haut", nav: "Navigation principale", filters: "Filtrer les projets", awards: "Distinctions", faq: "Ouvrir les questions fréquentes" },
+      en: { title: "Léonie Schmit · Data & Strategy Analyst · Portfolio",
+            desc: "Portfolio of Léonie Schmit, final-year engineering student at ESME (Big Data & Digital Marketing): experience, data and marketing projects, RISE, skills and contact.",
+            menu: "Menu", top: "Back to top", nav: "Main navigation", filters: "Filter projects", awards: "Awards", faq: "Open FAQ" }
+    };
+
+    const norm = t => t.replace(/\s+/g, ' ').trim();
+    const textNodes = [];
+    (function collect(node) {
+      if (node.nodeType === 3) {
+        const key = norm(node.nodeValue);
+        if (EN[key]) textNodes.push({ node, fr: node.nodeValue, en: node.nodeValue.replace(node.nodeValue.trim(), EN[key]) });
+        return;
+      }
+      if (node.nodeName === 'SCRIPT' || node.nodeName === 'STYLE' || node.nodeName === 'svg') return;
+      node.childNodes.forEach(collect);
+    })(document.body);
+
+    const langBtn = document.getElementById('langBtn');
+    function setLang(lang) {
+      textNodes.forEach(t => { t.node.nodeValue = lang === 'en' ? t.en : t.fr; });
+      const m = META[lang];
+      document.documentElement.lang = lang;
+      document.title = m.title;
+      document.querySelector('meta[name="description"]').content = m.desc;
+      document.querySelector('.brand').setAttribute('aria-label', m.top);
+      document.getElementById('navLinks').setAttribute('aria-label', m.nav);
+      document.querySelector('.filters').setAttribute('aria-label', m.filters);
+      document.querySelector('.awards').setAttribute('aria-label', m.awards);
+      document.getElementById('faq-toggle').setAttribute('aria-label', m.faq);
+      document.querySelectorAll('[data-cv]').forEach(a => a.setAttribute('href', lang === 'en' ? './assets/cv-leonie-schmit-en.pdf' : './assets/cv-leonie-schmit.pdf'));
+      langBtn.textContent = lang === 'en' ? 'FR' : 'EN';
+      langBtn.setAttribute('aria-label', lang === 'en' ? 'Passer le site en français' : 'Switch the site to English');
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+    let saved = null;
+    try { saved = localStorage.getItem('lang'); } catch (e) {}
+    const initial = saved || ((navigator.language || 'fr').toLowerCase().startsWith('fr') ? 'fr' : 'en');
+    if (initial === 'en') setLang('en');
+    langBtn.addEventListener('click', () => setLang(document.documentElement.lang === 'en' ? 'fr' : 'en'));
+  </script>
 </body>
 </html>
