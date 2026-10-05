@@ -4,7 +4,7 @@
 
 My personal portfolio: internships, data, marketing and web projects, awards, skills and contact details, in French and English.
 
-🔗 **Live site:** https://leonies29.github.io/
+🔗 **Live site:** https://leonies29.github.io/Porte-folio/
 
 <!-- Add a screenshot of the home page, for example:
 ![Portfolio home page](assets/screenshot.png)
@@ -46,8 +46,8 @@ HTML, CSS and vanilla JavaScript · Google Fonts (Nunito) · Hosted on GitHub Pa
 ├── index.html                     # The whole site: content, styles and scripts
 └── assets/
     ├── Leonie_Schmit_photo_pro.png  # Profile photo
-    ├── cv-leonie-schmit.pdf         # CV in French
-    ├── cv-leonie-schmit-en.pdf      # CV in English
+    ├── Leonie_Schmit_CV_Data_Strategy_Analyst_FR.pdf  # CV in French
+    ├── Leonie_Schmit_CV_Data_Strategy_Analyst_EN.pdf  # CV in English
     └── Logo/                        # Company and school logos
 ```
 
